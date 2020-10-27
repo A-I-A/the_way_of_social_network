@@ -1,0 +1,5 @@
+.loginFormError {
+    border : 1px solid red;
+    color : red;
+    font-weight: bold;
+}
