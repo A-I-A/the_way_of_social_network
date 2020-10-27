@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/the_way_of_social_network/static/css/main.ff133a58.chunk.css",
+    "main.js": "/the_way_of_social_network/static/js/main.8c98ed2e.chunk.js",
+    "main.js.map": "/the_way_of_social_network/static/js/main.8c98ed2e.chunk.js.map",
+    "runtime-main.js": "/the_way_of_social_network/static/js/runtime-main.24307ff4.js",
+    "runtime-main.js.map": "/the_way_of_social_network/static/js/runtime-main.24307ff4.js.map",
+    "static/js/2.5a737597.chunk.js": "/the_way_of_social_network/static/js/2.5a737597.chunk.js",
+    "static/js/2.5a737597.chunk.js.map": "/the_way_of_social_network/static/js/2.5a737597.chunk.js.map",
+    "static/css/3.f0786e10.chunk.css": "/the_way_of_social_network/static/css/3.f0786e10.chunk.css",
+    "static/js/3.9c1e76cf.chunk.js": "/the_way_of_social_network/static/js/3.9c1e76cf.chunk.js",
+    "static/js/3.9c1e76cf.chunk.js.map": "/the_way_of_social_network/static/js/3.9c1e76cf.chunk.js.map",
+    "static/css/4.5cbd0cbe.chunk.css": "/the_way_of_social_network/static/css/4.5cbd0cbe.chunk.css",
+    "static/js/4.672168ce.chunk.js": "/the_way_of_social_network/static/js/4.672168ce.chunk.js",
+    "static/js/4.672168ce.chunk.js.map": "/the_way_of_social_network/static/js/4.672168ce.chunk.js.map",
+    "index.html": "/the_way_of_social_network/index.html",
+    "precache-manifest.2879e95c5bc2ea0f6d3d550fb798c429.js": "/the_way_of_social_network/precache-manifest.2879e95c5bc2ea0f6d3d550fb798c429.js",
+    "service-worker.js": "/the_way_of_social_network/service-worker.js",
+    "static/css/3.f0786e10.chunk.css.map": "/the_way_of_social_network/static/css/3.f0786e10.chunk.css.map",
+    "static/css/4.5cbd0cbe.chunk.css.map": "/the_way_of_social_network/static/css/4.5cbd0cbe.chunk.css.map",
+    "static/css/main.ff133a58.chunk.css.map": "/the_way_of_social_network/static/css/main.ff133a58.chunk.css.map",
+    "static/js/2.5a737597.chunk.js.LICENSE.txt": "/the_way_of_social_network/static/js/2.5a737597.chunk.js.LICENSE.txt",
+    "static/media/preloader.gif": "/the_way_of_social_network/static/media/preloader.10f57e97.gif",
+    "static/media/user.jpg": "/the_way_of_social_network/static/media/user.2d549842.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.24307ff4.js",
+    "static/js/2.5a737597.chunk.js",
+    "static/css/main.ff133a58.chunk.css",
+    "static/js/main.8c98ed2e.chunk.js"
+  ]
+}

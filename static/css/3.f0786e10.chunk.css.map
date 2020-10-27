@@ -1,0 +1,1 @@
+{"version":3,"sources":["Post.module.css"],"names":[],"mappings":"AAAA,kBACI,SACJ,CAEA,oBACI,UAAU,CACV,WAAW,CACX,qBAAsB,CACtB,kBACJ","file":"3.f0786e10.chunk.css","sourcesContent":[".item{\n    color:red;\n}\n\n.avatar {\n    width:60px;\n    height:60px;\n    border: 1px solid gray;\n    border-radius: 10px;\n}"]}
