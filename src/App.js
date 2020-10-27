@@ -58,7 +58,7 @@ const mapStateToProps = (state) => {
  
 const AppMain = (props) => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <React.StrictMode>
           <AppContainer />
