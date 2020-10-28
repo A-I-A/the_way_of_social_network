@@ -6,7 +6,8 @@ import { maxLengthCreator, textRequired } from '../../utils/validator';
 import { SuperText } from '../../common/supertext/supertext';
 
 const MyPosts = (props)=>{
-    let postElements = props.posts.map(post=><Post text={post.text}/> );
+    let postElements = props.posts.map(post=><Post key={post.id }text={post.text} 
+                                                   likesCount={post.likesCount}/> );
 
     let addNewPost=(e)=>{
       props.addNewPost(e.addPost);

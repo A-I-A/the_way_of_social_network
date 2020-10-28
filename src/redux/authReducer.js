@@ -1,7 +1,8 @@
 import { stopSubmit } from "redux-form";
-import { authAPI } from "../api/api";
+import { authAPI, securityAPI } from "../api/api";
 
 const SET_USER_DATA = 'SET-USER-DATA';
+const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
 // const UNFOLLOW = 'UNFOLLOW';
 
 
@@ -11,6 +12,7 @@ let initialState ={
     login : null,
     isAuth : false,
     isFetching : false,
+    captchaURL: null,
 } 
     
 export const authReducer=(state=initialState, action)=>{
@@ -19,7 +21,10 @@ export const authReducer=(state=initialState, action)=>{
           return {...state, 
                  ...action.data,
                 }
-          }
+        }
+        case GET_CAPTCHA_URL_SUCCESS :{
+            return {...state, captchaURL : action.captchaURL}  
+        }
 
         default : return state;
     }
@@ -37,16 +42,29 @@ export const getUserAuthData = () =>{return async (dispatch) => {
     }}
 }
 
-export const login = (email, password, rememberMe) =>{ return async( dispatch) => {
-        let response = await authAPI.login(email, password, rememberMe);
+export const getCaptchaUrlSuccess = (url)=>{
+    return {type : GET_CAPTCHA_URL_SUCCESS , captchaURL : url };
+}
+
+export const login = (email, password, rememberMe,captcha="") =>{ return async( dispatch) => {
+        let response = await authAPI.login(email, password, rememberMe, captcha);
         if (response.data.resultCode===0){
             dispatch(getUserAuthData()); 
         }else{
+            if (response.data.resultCode===10){
+                dispatch(getCaptchaUrl());
+            }
             let message = response.data.messages.length >0 ? response.data.messages[0] : "Some Error";
             dispatch(stopSubmit("login",{_error : message}));
         }
     }
 }
+
+export const getCaptchaUrl = () =>{ return async( dispatch) => {
+    let response = await securityAPI.getCaptchaUrl();
+    const captchaUrl = response.data.url;
+    dispatch(getCaptchaUrlSuccess(captchaUrl))
+}}
 
 export const logout = () =>{return async (dispatch) => {
     let response= await authAPI.logout();
