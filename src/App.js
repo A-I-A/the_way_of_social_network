@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import style from './App.module.css';
 import Navigation from './components/Navigation/Navigation';
-import { Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -22,18 +22,26 @@ import { Provider } from 'react-redux';
 const DialogsContainer = React.lazy(()=>import('./components/Dialogs/Dialogs.container'));
 const ProfileContainer =  React.lazy(()=>import('./components/Profile/Profile.container'));
 class App extends React.Component{
-
+  catchAllUnhandledErrors=(promiseRejectionEvent)=>{
+    alert("some error occured")
+  }
   componentDidMount() {
     this.props.initializeApp();
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+  }
+  componentWillUnmount(){
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
   }
   
   render() {
     if(!this.props.initialized) {return <Preloader/>}
     return (
-      <div className='app-wrapper'>
+      <div className={style.app_wrapper}>
         <HeaderContainer /> 
         <Navigation />
-        <div class="app-wrapper-content">
+        <div className={style.app_wrapper_content}>
+          <Switch>
+          <Route exact path="/"> <Redirect to='/profile'/> </Route>
           <Route path="/profile/:userId?"> <React.Suspense fallback={<Preloader/>}> <ProfileContainer /></React.Suspense> </Route>
           <Route path="/dialogs"><React.Suspense fallback={<Preloader/>}> <DialogsContainer /></React.Suspense> </Route>
           <Route path="/news" component={News} />
@@ -41,6 +49,8 @@ class App extends React.Component{
           <Route path="/settings" component={Settings} />
           <Route path="/users"> <UsersContainer /> </Route>
           <Route path="/login"> <Login />  </Route>
+          <Route path="/*"> <div>404 NOT FOUND </div>  </Route>
+          </Switch>
         </div>
       </div>
     );

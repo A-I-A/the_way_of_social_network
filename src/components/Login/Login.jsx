@@ -24,7 +24,7 @@ const LoginForm = (props,captchaURL) => {
             <div>
                 <button>Log In </button>
                 <div>
-                    {captchaURL && <img src={captchaURL}/>}
+                    {captchaURL && <img src={captchaURL} alt=''/>}
                     {captchaURL &&  <Field  name="captcha" component="input"/>}
                 </div>
             </div>
@@ -45,7 +45,7 @@ const Login=(props)=>{
     if (props.isAuth){return <Redirect to="/profile"/>}
     return <div>
               <hi>Login</hi>
-              <LoginReduxForm onSubmit={onSubmit} captvhaURL={props.captchaURL}/>
+              <LoginReduxForm onSubmit={onSubmit} captchaURL={props.captchaURL}/>
               
            </div>
 }

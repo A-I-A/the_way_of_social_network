@@ -21,7 +21,7 @@ const profileReducer=(state=initialState, action)=>{
     switch (action.type){
         case ADD_POST : {
             return{...state, 
-                    posts :[...state.posts, {id: 8, text : action.text, likesCount : 50}]}};
+                    posts :[...state.posts, {id: 8, text : action.text, likesCount : 50}]}}
             
         case SET_USER_PROFILE : { 
             return {...state, profile : action.profile};
@@ -34,7 +34,7 @@ const profileReducer=(state=initialState, action)=>{
             return{...state, status : action.status};
         }
         case DELETE_POST : {
-            return{...state, posts : state.posts.filter(p=>p.id != action.id)};
+            return{...state, posts : state.posts.filter(p=>p.id !== action.id)};
         }
         default: {return state;}
     }    

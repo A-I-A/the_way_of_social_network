@@ -9,8 +9,8 @@ import { SuperText } from '../common/supertext/supertext';
 
 
 const Dialogs = (props)=>{
-  let messagesElements =props.messages.map(message => <Message text={message.text} /> );
-  let dialogElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} /> );
+  let messagesElements =props.messages.map(message => <Message key={message.id}text={message.text} /> );
+  let dialogElements = props.dialogs.map(dialog => <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} /> );
     
   let addNewMessage = (e)=>{
     props.sendMessage(e.MessageText);
