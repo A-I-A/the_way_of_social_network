@@ -7,7 +7,7 @@ import { login } from '../../redux/authReducer';
 import { Redirect } from 'react-router-dom';
 import style from './Login.module.css'
 
-const LoginForm = (props,captchaURL) => {
+const LoginForm = (props,{captchaURL}) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
